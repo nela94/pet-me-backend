@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 resources :pets, :matches
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create]
+      resources :users, only: [:index, :create]
       post '/login', to: 'auth#create'
       get '/current_user', to: 'auth#show'
     end

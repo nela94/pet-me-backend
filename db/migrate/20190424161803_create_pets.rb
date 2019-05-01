@@ -6,7 +6,12 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :img
       t.string :description
       t.string :age
-      t.belongs_to :user_id
+      t.integer :adoption_id
+      t.string :img_medium
+      t.string :img_large
+      t.string :img_small
+      t.string :img_full
+      t.belongs_to :user
 
       t.timestamps
     end
