@@ -27,7 +27,7 @@ class MatchesController < ApplicationController
     render json: @match
   end
 
-  def delete
+  def destroy
     @match = Match.find(params[:id])
     @match.destroy
     render json: @match
@@ -37,10 +37,10 @@ class MatchesController < ApplicationController
 
   def match_params
     # byebug
-    params.permit(:user_id)
+    params.permit(:user_id, :pet_id)
   end
 
   def pet_params
-    params.require(:pet).permit(:adoption_id, :img_full, :img_medium, :img_large, :img_small, :name, :gender, :img, :description, :age, :user_id)
+    params.require(:pet).permit(:adoption_id, :img_full, :contact, :name, :gender, :description, :age, :user_id)
   end
 end

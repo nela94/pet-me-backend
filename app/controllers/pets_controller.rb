@@ -10,12 +10,6 @@ class PetsController < ApplicationController
     render json: @pet
   end
 
-  def create
-
-    @pet = Pet.create(pet_params)
-    render json: @pet
-  end
-
   def update
     @pet = Pet.find(params[:id])
       @pet.update(pet_params)
@@ -25,7 +19,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.permit(:adoption_id, :img_full, :img_medium, :img_large, :img_small, :name, :gender, :img, :description, :age, :user_id)
+    params.permit(:adoption_id, :img_full, :contact, :name, :gender, :description, :age, :user_id)
   end
 
 end
