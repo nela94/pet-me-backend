@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.3'
+ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -17,6 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 gem 'stripe'
 
+gem "google-cloud-storage", "~> 1.8", require: false
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
