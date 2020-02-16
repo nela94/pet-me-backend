@@ -6,6 +6,9 @@ resources :pets, :matches, :charges
       resources :users, only: [:index, :create]
       post '/login', to: 'auth#create'
       get '/current_user', to: 'auth#show'
+      get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+        !request.xhr? && request.format.html?
+      end
     end
   end
 end
